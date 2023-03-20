@@ -1,5 +1,6 @@
 #include "raylib.h"
 #include <iostream>
+#include "Header.h"
 
 
 using namespace std;
@@ -17,8 +18,9 @@ int main()
     {
         BeginDrawing();
 
-        ClearBackground(GRAY);
+        ClearBackground(BLACK);
 
+       
         DrawText("Code the Bomb", screenWidth / 2 - MeasureText("Code the Bomb", 80) / 2, 80, 80, WHITE);
         DrawText("the", screenWidth / 2 - MeasureText("the", 80) / 2, 80, 80, MAROON);
         if (CheckCollisionPointRec(GetMousePosition(), { screenWidth / 2 - 100, 240, 200, 50 }))
@@ -27,8 +29,9 @@ int main()
             DrawText("Start Game", screenWidth / 2 - MeasureText("Start Game", 40) / 2, 240, 40, WHITE);
             if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
             {
-               
-
+                
+                timer();
+                CloseWindow();
                
             }
         }
