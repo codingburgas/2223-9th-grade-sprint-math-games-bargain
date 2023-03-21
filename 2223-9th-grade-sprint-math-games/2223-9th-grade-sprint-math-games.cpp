@@ -30,8 +30,9 @@ int main()
             if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
             {
                 
-                timer();
-                CloseWindow();
+                
+                logo();
+                
                
             }
         }
