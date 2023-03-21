@@ -110,12 +110,12 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\User\lib\raylib\out\build\x64-Debug\raylib\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\atana\Desktop\raylib\out\build\x64-Debug\raylib\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\Users\User\lib\raylib\out\build\x64-Debug\raylib</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Users\atana\Desktop\raylib\out\build\x64-Debug\raylib</AdditionalLibraryDirectories>
       <AdditionalDependencies>winmm.lib;raylib.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -127,21 +127,22 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>D:\raylib\out\build\x64-Debug\raylib\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\atana\Desktop\raylib\out\build\x64-Debug\raylib\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>D:\raylib\out\build\x64-Debug\raylib</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Users\atana\Desktop\raylib\out\build\x64-Debug\raylib</AdditionalLibraryDirectories>
       <AdditionalDependencies>winmm.lib;raylib.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="2223-9th-grade-sprint-math-games.cpp" />
-    <ClCompile Include="Source.cpp" />
-    <ClCompile Include="Timer.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="game.cpp" />
+    <ClCompile Include="inputAnswer.cpp" />
+    <ClCompile Include="timer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header.h" />

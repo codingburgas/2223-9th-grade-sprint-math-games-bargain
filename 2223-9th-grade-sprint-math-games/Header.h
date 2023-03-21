@@ -4,3 +4,5 @@
 
 void timer();
 void logo();
+int input(void);
+bool IsAnyKeyPressed();

@@ -11,7 +11,7 @@ void logo()
 
     // NOTE: Textures MUST be loaded after Window initialization (OpenGL context is required)
 
-    Image image = LoadImage("D:/2223-9th-grade-sprint-math-games-bargain/assets/c4.png");     // Loaded in CPU memory (RAM)
+    Image image = LoadImage("c4-removebg-preview.png");     // Loaded in CPU memory (RAM)
     Texture2D texture = LoadTextureFromImage(image);          // Image converted to texture, GPU memory (VRAM)
     UnloadImage(image);   // Once image has been converted to texture and uploaded to VRAM, it can be unloaded from RAM
 
@@ -30,7 +30,7 @@ void logo()
         //----------------------------------------------------------------------------------
         BeginDrawing();
 
-        ClearBackground(RAYWHITE);
+        ClearBackground(BLACK);
 
         DrawTexture(texture, screenWidth / 2 - texture.width / 2, screenHeight / 2 - texture.height / 2, WHITE);
 
