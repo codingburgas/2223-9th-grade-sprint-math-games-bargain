@@ -110,12 +110,12 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>D:\raylib\out\build\x64-Debug\raylib\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\User\lib\raylib\out\build\x64-Debug\raylib\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>D:\raylib\out\build\x64-Debug\raylib</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Users\User\lib\raylib\out\build\x64-Debug\raylib</AdditionalLibraryDirectories>
       <AdditionalDependencies>winmm.lib;raylib.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
