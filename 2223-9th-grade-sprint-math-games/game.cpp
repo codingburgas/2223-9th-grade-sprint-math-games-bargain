@@ -7,12 +7,12 @@ void game()
     const int screenWidth = 800;
     const int screenHeight = 450;
 
-    InitWindow(screenWidth, screenHeight, "raylib [textures] example - image loading");
+    InitWindow(screenWidth, screenHeight, "Game");
 
     // NOTE: Textures MUST be loaded after Window initialization (OpenGL context is required)
 
-    Image image = LoadImage("c4.png");     // Loaded in CPU memory (RAM)
-    ImageResize(&image, 350, 400);
+    Image image = LoadImage("../assets/c4.png");     // Loaded in CPU memory (RAM)
+    ImageResize(&image, 200, 250);
     Texture2D texture = LoadTextureFromImage(image);          // Image converted to texture, GPU memory (VRAM)
     UnloadImage(image);
 
@@ -24,9 +24,6 @@ void game()
 
     int framesCounter = 0;
 
-    float time = 0.0f;
-    float timeLeft = 0.0f;
-    bool timerStarted = false;
 
     while (!WindowShouldClose()) {
 
@@ -77,7 +74,7 @@ void game()
         DrawText("PLACE MOUSE OVER INPUT BOX!", 240, 140, 20, GRAY);
 
         DrawRectangleRec(textBox, LIGHTGRAY);
-        if (mouseOnText) DrawRectangleLines((int)textBox.x, (int)textBox.y, (int)textBox.width, (int)textBox.height, RED);
+        if (mouseOnText) DrawRectangleLines((int)textBox.x, (int)textBox.y, (int)textBox.width, (int)textBox.height - 40, RED);
         else DrawRectangleLines((int)textBox.x, (int)textBox.y, (int)textBox.width, (int)textBox.height, DARKGRAY);
 
         DrawText(name, (int)textBox.x + 5, (int)textBox.y + 8, 40, MAROON);
@@ -117,37 +114,5 @@ void game()
 
 
 
-        if (timerStarted) {
-            float currentTime = (float)GetTime();
-            timeLeft = 60.0f - (currentTime - time);
-
-            if (timeLeft < 0.0f) {
-                timeLeft = 0.0f;
-                timerStarted = false;
-                CloseWindow();
-            }
-        }
-
-
-        BeginDrawing();
-        ClearBackground(BLACK);
-        if (timerStarted) {
-            DrawText(TextFormat("Time remaining: %.2f", timeLeft), 10, 10, 20, RAYWHITE);
-        }
-        else {
-            DrawText("Press SPACE to start the game", 10, 10, 20, RAYWHITE);
-        }
-        EndDrawing();
-
-
-        if (IsKeyPressed(KEY_SPACE)) {
-            time = (float)GetTime();
-            timerStarted = true;
-
-        }
-
-
     }
-
-
 }
