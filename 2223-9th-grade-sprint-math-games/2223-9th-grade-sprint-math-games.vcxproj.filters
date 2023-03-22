@@ -15,16 +15,22 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
+    <ClCompile Include="MAIN.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="timer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="game.cpp">
+    <ClCompile Include="picture.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="inputAnswer.cpp">
+    <ClCompile Include="inputBox.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="menu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GAME.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

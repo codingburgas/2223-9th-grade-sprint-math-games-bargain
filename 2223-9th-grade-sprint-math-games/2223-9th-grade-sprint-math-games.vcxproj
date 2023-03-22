@@ -139,9 +139,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="game.cpp" />
-    <ClCompile Include="inputAnswer.cpp" />
+    <ClCompile Include="MAIN.cpp" />
+    <ClCompile Include="picture.cpp" />
+    <ClCompile Include="inputBox.cpp" />
+    <ClCompile Include="menu.cpp" />
+    <ClCompile Include="GAME.cpp" />
     <ClCompile Include="timer.cpp" />
   </ItemGroup>
   <ItemGroup>

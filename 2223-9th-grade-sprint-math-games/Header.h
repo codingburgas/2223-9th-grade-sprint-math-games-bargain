@@ -2,7 +2,9 @@
 
 #include "raylib.h"
 
+void game();
+void menu();
 void timer();
-void logo();
+void picture();
 int input(void);
 bool IsAnyKeyPressed();
