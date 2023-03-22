@@ -30,7 +30,7 @@ int main()
             if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
             {
                 
-                
+                CloseWindow();
                 logo();
                 
                
