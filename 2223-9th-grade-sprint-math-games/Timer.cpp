@@ -27,7 +27,7 @@ void timer()
         ClearBackground(BLACK);
         if (timerStarted) 
         {
-            DrawText(TextFormat("Time remaining: %.2f", timeLeft), 10, 10, 20, RAYWHITE);
+            DrawText(TextFormat("Time remaining: %.2f", timeLeft), 250, 10, 20, RAYWHITE);
         }
        
         EndDrawing();

@@ -50,7 +50,7 @@ void game()
 
         // Timer
         float currentTime = (float)GetTime();
-        timeLeft = 67.0f - (currentTime - time);
+        timeLeft = 66.0f - (currentTime - time);
         if (timeLeft < 0.0f) {
                 timeLeft = 0.0f;
                 
@@ -76,7 +76,9 @@ void game()
         DrawText(TextFormat("INPUT CHARS: %i/%i", letterCount, MAX_INPUT_CHARS), 590, screenHeight - 25, 20, WHITE);
 
         // Draw timer
-        DrawText(TextFormat("Time remaining: %.0f", timeLeft), 10, 10, 20, RAYWHITE);
+        DrawText(TextFormat("Time left: %.0f", timeLeft), 337, 10, 20, RAYWHITE);
+        
+
         EndDrawing();
     }
     // Unload resources

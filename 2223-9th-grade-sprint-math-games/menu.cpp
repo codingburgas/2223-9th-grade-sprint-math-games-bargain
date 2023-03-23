@@ -30,8 +30,10 @@ void menu()
             DrawText("Start Game", screenWidth / 2 - MeasureText("Start Game", 40) / 2, 300, 40, WHITE);
             if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
             {
+
                 CloseWindow();
                 countdown();
+                
             }
         }
         else
@@ -42,18 +44,18 @@ void menu()
         if (CheckCollisionPointRec(GetMousePosition(), { screenWidth / 2 - 100, 360, 200, 50 }))
         {
 
-            DrawText("Options", screenWidth / 2 - MeasureText("Options", 40) / 2, 360, 40, WHITE);
+            DrawText("Exit", screenWidth / 2 - MeasureText("Exit", 40) / 2, 360, 40, WHITE);
 
             if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
             {
 
-
+                CloseWindow();
             }
         }
         else
         {
 
-            DrawText("Options", screenWidth / 2 - MeasureText("Options", 20) / 2, 360, 20, GRAY);
+            DrawText("Exit", screenWidth / 2 - MeasureText("Exit", 20) / 2, 360, 20, GRAY);
         }
 
         EndDrawing();
