@@ -30,9 +30,7 @@ void menu()
             DrawText("Start Game", screenWidth / 2 - MeasureText("Start Game", 40) / 2, 300, 40, WHITE);
             if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
             {
-
-                CloseWindow();
-                game();
+                countdown();
 
 
             }

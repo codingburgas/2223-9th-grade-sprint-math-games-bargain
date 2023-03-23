@@ -8,7 +8,6 @@ void game()
     const int screenWidth = 800;
     const int screenHeight = 450;
 
-    InitWindow(screenWidth, screenHeight, "Game");
 
     // Load texture
     Image image = LoadImage("../assets/c4.png");
