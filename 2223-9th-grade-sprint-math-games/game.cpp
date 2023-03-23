@@ -9,6 +9,7 @@ void game()
     const int screenHeight = 450;
 
 
+
     // Load texture
     Image image = LoadImage("../assets/c4.png");
     ImageResize(&image, 200, 250);
@@ -23,7 +24,6 @@ void game()
     // Timer
     float time = 0.0f;
     float timeLeft = 0.0f;
-    bool timerStarted = false;
 
     while (!WindowShouldClose()) {
 
@@ -49,16 +49,12 @@ void game()
         }
 
         // Timer
-        if (timerStarted) {
-            float currentTime = (float)GetTime();
-            timeLeft = 60.0f - (currentTime - time);
-
-            if (timeLeft < 0.0f) {
+        float currentTime = (float)GetTime();
+        timeLeft = 67.0f - (currentTime - time);
+        if (timeLeft < 0.0f) {
                 timeLeft = 0.0f;
-                timerStarted = false;
                 CloseWindow();
             }
-        }
 
         // Draw
         BeginDrawing();
@@ -79,22 +75,9 @@ void game()
         DrawText(TextFormat("INPUT CHARS: %i/%i", letterCount, MAX_INPUT_CHARS), screenWidth - 225, screenHeight - 50, 20, WHITE);
 
         // Draw timer
-        if (timerStarted) {
-            DrawText(TextFormat("Time remaining: %.2f", timeLeft), 10, 10, 20, RAYWHITE);
-        }
-        else {
-            DrawText("Press SPACE to start the game", 10, 10, 20, RAYWHITE);
-        }
-
+        DrawText(TextFormat("Time remaining: %.0f", timeLeft), 10, 10, 20, RAYWHITE);
         EndDrawing();
-
-        // Handle game start
-        if (IsKeyPressed(KEY_SPACE)) {
-            time = (float)GetTime();
-            timerStarted = true;
-        }
     }
-
     // Unload resources
     UnloadTexture(texture);
     CloseWindow();
