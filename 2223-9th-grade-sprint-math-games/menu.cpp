@@ -9,6 +9,11 @@ void menu()
 
     InitWindow(screenWidth, screenHeight, "Menu");
 
+    Image image = LoadImage("titleGame-removebg-preview.png");
+    ImageResize(&image, 400, 200);
+    Texture2D texture = LoadTextureFromImage(image);
+    UnloadImage(image);
+
     SetTargetFPS(60);
 
     while (!WindowShouldClose())
@@ -18,12 +23,11 @@ void menu()
         ClearBackground(BLACK);
 
 
-        DrawText("Code the Bomb", screenWidth / 2 - MeasureText("Code the Bomb", 80) / 2, 80, 80, WHITE);
-        DrawText("the", screenWidth / 2 - MeasureText("the", 80) / 2, 80, 80, MAROON);
-        if (CheckCollisionPointRec(GetMousePosition(), { screenWidth / 2 - 100, 240, 200, 50 }))
+        DrawTexture(texture, screenWidth / 2 - texture.width / 2, screenHeight / 2 - texture.height / 2 - 50, WHITE);
+        if (CheckCollisionPointRec(GetMousePosition(), { screenWidth / 2 - 100, 300, 200, 50 }))
         {
 
-            DrawText("Start Game", screenWidth / 2 - MeasureText("Start Game", 40) / 2, 240, 40, WHITE);
+            DrawText("Start Game", screenWidth / 2 - MeasureText("Start Game", 40) / 2, 300, 40, WHITE);
             if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
             {
 
@@ -36,12 +40,12 @@ void menu()
         else
         {
 
-            DrawText("Start Game", screenWidth / 2 - MeasureText("Start Game", 20) / 2, 240, 20, GRAY);
+            DrawText("Start Game", screenWidth / 2 - MeasureText("Start Game", 20) / 2, 300, 20, GRAY);
         }
-        if (CheckCollisionPointRec(GetMousePosition(), { screenWidth / 2 - 100, 300, 200, 50 }))
+        if (CheckCollisionPointRec(GetMousePosition(), { screenWidth / 2 - 100, 360, 200, 50 }))
         {
 
-            DrawText("Options", screenWidth / 2 - MeasureText("Options", 40) / 2, 300, 40, WHITE);
+            DrawText("Options", screenWidth / 2 - MeasureText("Options", 40) / 2, 360, 40, WHITE);
 
             if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
             {
@@ -52,7 +56,7 @@ void menu()
         else
         {
 
-            DrawText("Options", screenWidth / 2 - MeasureText("Options", 20) / 2, 300, 20, GRAY);
+            DrawText("Options", screenWidth / 2 - MeasureText("Options", 20) / 2, 360, 20, GRAY);
         }
 
         EndDrawing();
