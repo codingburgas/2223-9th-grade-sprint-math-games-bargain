@@ -25,12 +25,11 @@ void timer()
 
         BeginDrawing();
         ClearBackground(BLACK);
-        if (timerStarted) {
+        if (timerStarted) 
+        {
             DrawText(TextFormat("Time remaining: %.2f", timeLeft), 10, 10, 20, RAYWHITE);
         }
-        else {
-            DrawText("Press SPACE to start the game", 10, 10, 20, RAYWHITE);
-        }
+       
         EndDrawing();
 
 

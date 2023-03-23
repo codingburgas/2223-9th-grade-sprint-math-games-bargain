@@ -19,7 +19,7 @@ void game()
     // Set up text box
     char name[MAX_INPUT_CHARS + 1] = "\0";
     int letterCount = 0;
-    Rectangle textBox = { screenWidth / 2.0f - 100, 250, 225, 50 };
+    Rectangle textBox = { screenWidth / 2.0f - 385, 180, 225, 50 };
 
     // Timer
     float time = 0.0f;
@@ -53,6 +53,7 @@ void game()
         timeLeft = 67.0f - (currentTime - time);
         if (timeLeft < 0.0f) {
                 timeLeft = 0.0f;
+                
                 CloseWindow();
             }
 
@@ -72,7 +73,7 @@ void game()
         DrawText(name, (int)textBox.x + 5, (int)textBox.y + 8, 40, BLACK);
 
         // Draw input counter
-        DrawText(TextFormat("INPUT CHARS: %i/%i", letterCount, MAX_INPUT_CHARS), screenWidth - 225, screenHeight - 50, 20, WHITE);
+        DrawText(TextFormat("INPUT CHARS: %i/%i", letterCount, MAX_INPUT_CHARS), 590, screenHeight - 25, 20, WHITE);
 
         // Draw timer
         DrawText(TextFormat("Time remaining: %.0f", timeLeft), 10, 10, 20, RAYWHITE);
