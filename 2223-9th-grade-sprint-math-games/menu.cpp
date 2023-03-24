@@ -12,6 +12,8 @@ void menu()
     Image image = LoadImage("titleGame-removebg-preview.png");
     ImageResize(&image, 400, 200);
     Texture2D texture = LoadTextureFromImage(image);
+    Texture2D background = LoadTexture("../assets/menu-bg.png"); 
+
     UnloadImage(image);
 
     SetTargetFPS(60);
@@ -21,13 +23,12 @@ void menu()
         BeginDrawing();
 
         ClearBackground(BLACK);
-
-
+        DrawTexture(background, 0, 0, WHITE);
         DrawTexture(texture, screenWidth / 2 - texture.width / 2, screenHeight / 2 - texture.height / 2 - 50, WHITE);
         if (CheckCollisionPointRec(GetMousePosition(), { screenWidth / 2 - 100, 300, 200, 50 }))
         {
 
-            DrawText("Start Game", screenWidth / 2 - MeasureText("Start Game", 40) / 2, 300, 40, WHITE);
+            DrawText("Start Game", screenWidth / 2 - MeasureText("Start Game", 40) / 2, 300, 40, RED);
             if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
             {
 
@@ -39,12 +40,12 @@ void menu()
         else
         {
 
-            DrawText("Start Game", screenWidth / 2 - MeasureText("Start Game", 20) / 2, 300, 20, GRAY);
+            DrawText("Start Game", screenWidth / 2 - MeasureText("Start Game", 20) / 2, 300, 20, RED);
         }
         if (CheckCollisionPointRec(GetMousePosition(), { screenWidth / 2 - 100, 360, 200, 50 }))
         {
 
-            DrawText("Exit", screenWidth / 2 - MeasureText("Exit", 40) / 2, 360, 40, WHITE);
+            DrawText("Exit", screenWidth / 2 - MeasureText("Exit", 40) / 2, 360, 40, RED);
 
             if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
             {
@@ -55,7 +56,7 @@ void menu()
         else
         {
 
-            DrawText("Exit", screenWidth / 2 - MeasureText("Exit", 20) / 2, 360, 20, GRAY);
+            DrawText("Exit", screenWidth / 2 - MeasureText("Exit", 20) / 2, 360, 20, RED);
         }
 
         EndDrawing();
