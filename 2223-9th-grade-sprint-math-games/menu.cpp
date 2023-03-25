@@ -12,6 +12,7 @@ void menu()
     Image image = LoadImage("logoGame-removebg-preview.png");
     ImageResize(&image, 450, 380);
     Texture2D texture = LoadTextureFromImage(image);
+    Texture2D background = LoadTexture("../assets/menu-bg.png");
     
 
     UnloadImage(image);
@@ -23,7 +24,7 @@ void menu()
         BeginDrawing();
 
         ClearBackground(BLACK);
-        
+        DrawTexture(background, 0, 0, WHITE);
         DrawTexture(texture, screenWidth / 2 - texture.width / 2, screenHeight / 2 - texture.height / 2 - 50, WHITE);
         if (CheckCollisionPointRec(GetMousePosition(), { screenWidth / 2 - 100, 300, 200, 50 }))
         {

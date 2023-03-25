@@ -7,10 +7,13 @@ void countdown()
     const int screenWidth = 800;
     const int screenHeight = 450;
     InitWindow(screenWidth, screenHeight, "Game");
+    Texture2D background = LoadTexture("../assets/menu-bg.png");
+
     float time = 0.0f;
     float timeLeft = 0.0f;
     while (!WindowShouldClose()) {
-            float currentTime = (float)GetTime();
+        DrawTexture(background, 0, 0, WHITE);
+        float currentTime = (float)GetTime();
             timeLeft = 5.5f - (currentTime - time);
 
             if (timeLeft < 0.0f) {
