@@ -140,6 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="countdown.cpp" />
+    <ClCompile Include="generateEquation.cpp" />
     <ClCompile Include="MAIN.cpp" />
     <ClCompile Include="picture.cpp" />
     <ClCompile Include="inputBox.cpp" />

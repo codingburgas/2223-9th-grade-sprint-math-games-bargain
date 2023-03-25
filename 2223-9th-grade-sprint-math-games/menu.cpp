@@ -57,9 +57,9 @@ void menu()
         }
 
         // Exit Button
-        if (CheckCollisionPointRec(GetMousePosition(), { screenWidth - 200, screenHeight - 50, 200, 50 }))
+        if (CheckCollisionPointRec(GetMousePosition(), { 0, screenHeight - 40, 200, 50 }))
         {
-            DrawText("Exit", screenWidth - MeasureText("Exit", 40) - 20, screenHeight - 50, 40, RED);
+            DrawText("Exit", 20, screenHeight - 40, 40, RED);
             if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
             {
                 CloseWindow();
@@ -67,7 +67,7 @@ void menu()
         }
         else
         {
-            DrawText("Exit", screenWidth - MeasureText("Exit", 20) - 20, screenHeight - 50, 20, RED);
+            DrawText("Exit", 20, screenHeight - 40, 20, RED);
         }
 
         DrawText("BARGAIN TEAM @ 2023", screenWidth - 125, screenHeight - 15, 10, WHITE);

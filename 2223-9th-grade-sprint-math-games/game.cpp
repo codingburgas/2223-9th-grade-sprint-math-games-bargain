@@ -74,6 +74,7 @@ void game()
         // Draw input text
         DrawText(name, (int)textBox.x + 5, (int)textBox.y + 8, 40, BLACK);
 
+        void generateEquation();
 
         // Draw timer
         DrawText(TextFormat("Time left: %.0f", timeLeft), 337, 10, 20, RAYWHITE);

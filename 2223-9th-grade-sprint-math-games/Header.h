@@ -9,3 +9,4 @@ void picture();
 void countdown();
 int input(void);
 bool IsAnyKeyPressed();
+void randomEquation();
