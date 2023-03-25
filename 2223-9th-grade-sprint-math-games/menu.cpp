@@ -26,39 +26,50 @@ void menu()
         ClearBackground(BLACK);
         DrawTexture(background, 0, 0, WHITE);
         DrawTexture(texture, screenWidth / 2 - texture.width / 2, screenHeight / 2 - texture.height / 2 - 50, WHITE);
+
+        // Start Game Button
         if (CheckCollisionPointRec(GetMousePosition(), { screenWidth / 2 - 100, 300, 200, 50 }))
         {
-
-            DrawText("Start Game", screenWidth / 2 - MeasureText("Start Game", 40) / 2, 300, 40, MAROON);
+            DrawText("Start Game", screenWidth / 2 - MeasureText("Start Game", 40) / 2, 300, 40, RED);
             if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
             {
-
                 CloseWindow();
                 countdown();
-                
             }
         }
         else
         {
-
-            DrawText("Start Game", screenWidth / 2 - MeasureText("Start Game", 20) / 2, 300, 20, MAROON);
+            DrawText("Start Game", screenWidth / 2 - MeasureText("Start Game", 20) / 2, 300, 20, RED);
         }
+
+        // Options Button
         if (CheckCollisionPointRec(GetMousePosition(), { screenWidth / 2 - 100, 360, 200, 50 }))
         {
-
-            DrawText("Exit", screenWidth / 2 - MeasureText("Exit", 40) / 2, 360, 40, MAROON);
-
+            DrawText("Options", screenWidth / 2 - MeasureText("Options", 40) / 2, 360, 40, RED);
             if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
             {
-
                 CloseWindow();
             }
         }
         else
         {
-
-            DrawText("Exit", screenWidth / 2 - MeasureText("Exit", 20) / 2, 360, 20, MAROON);
+            DrawText("Options", screenWidth / 2 - MeasureText("Options", 20) / 2, 360, 20, RED);
         }
+
+        // Exit Button
+        if (CheckCollisionPointRec(GetMousePosition(), { screenWidth - 200, screenHeight - 50, 200, 50 }))
+        {
+            DrawText("Exit", screenWidth - MeasureText("Exit", 40) - 20, screenHeight - 50, 40, RED);
+            if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
+            {
+                CloseWindow();
+            }
+        }
+        else
+        {
+            DrawText("Exit", screenWidth - MeasureText("Exit", 20) - 20, screenHeight - 50, 20, RED);
+        }
+
         DrawText("BARGAIN TEAM @ 2023", screenWidth - 125, screenHeight - 15, 10, WHITE);
         EndDrawing();
     }
