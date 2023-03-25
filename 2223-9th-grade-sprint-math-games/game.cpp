@@ -65,7 +65,7 @@ void game()
         ClearBackground(BLACK);
 
         // Draw texture
-        DrawTexture(texture, screenWidth / 2 - texture.width / 2, screenHeight / 2 - texture.height / 2 - 50, WHITE);
+        DrawTexture(texture, screenWidth / 2 - texture.width / 2, screenHeight / 2 - texture.height / 2, WHITE);
 
         // Draw text box
         DrawRectangleRec(textBox, WHITE);

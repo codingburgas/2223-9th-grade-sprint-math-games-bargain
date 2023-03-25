@@ -59,7 +59,7 @@ void menu()
 
             DrawText("Exit", screenWidth / 2 - MeasureText("Exit", 20) / 2, 360, 20, MAROON);
         }
-
+        DrawText("BARGAIN TEAM @ 2023", screenWidth - 125, screenHeight - 15, 10, WHITE);
         EndDrawing();
     }
     
