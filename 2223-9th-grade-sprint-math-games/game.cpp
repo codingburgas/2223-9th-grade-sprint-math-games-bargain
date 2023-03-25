@@ -14,6 +14,7 @@ void game()
     Image image = LoadImage("../assets/c4.png");
     ImageResize(&image, 200, 250);
     Texture2D texture = LoadTextureFromImage(image);
+    Texture2D background = LoadTexture("../assets/game-bg.png");
     UnloadImage(image);
 
     // Set up text box
@@ -26,6 +27,7 @@ void game()
     float timeLeft = 0.0f;
 
     while (!WindowShouldClose()) {
+        DrawTexture(background, 0, 0, WHITE);
 
         // Handle text input
         bool mouseOnText = CheckCollisionPointRec(GetMousePosition(), textBox);
