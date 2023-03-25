@@ -74,8 +74,6 @@ void game()
         // Draw input text
         DrawText(name, (int)textBox.x + 5, (int)textBox.y + 8, 40, BLACK);
 
-        // Draw input counter
-        DrawText(TextFormat("INPUT CHARS: %i/%i", letterCount, MAX_INPUT_CHARS), 590, screenHeight - 25, 20, WHITE);
 
         // Draw timer
         DrawText(TextFormat("Time left: %.0f", timeLeft), 337, 10, 20, RAYWHITE);
