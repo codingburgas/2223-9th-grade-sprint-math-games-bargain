@@ -39,7 +39,7 @@ Enjoy the game!
   - [Doxygen]()
   - [Documentation]()
   - [Design documentation]()
-  - [Presentation]()
+  - [Presentation](https://codingburgas-my.sharepoint.com/:p:/g/personal/atapostolov21_codingburgas_bg/EaJnzJ4-TbFJgFhVLR_V3cQBSzkHNRAvgWo9hpROABxJxA?e=s0zgMx)
   - [QA Google testing]()
   - [QA - Test Plan]()
 
