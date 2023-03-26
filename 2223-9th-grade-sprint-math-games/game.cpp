@@ -48,8 +48,8 @@ void game(float setTime, int inGameQuestions)
         DrawTexture(background, 0, 0, WHITE);
         if (questionAnswered)
         {
-            a = GetRandomValue(0, 15);
-            b = GetRandomValue(0, 15);
+            a = GetRandomValue(0, 5);
+            b = GetRandomValue(0, 5);
             op = GetRandomValue(0, 4);
             temp = to_string(solution);
             if (name == temp)
