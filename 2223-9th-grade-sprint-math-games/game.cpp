@@ -12,7 +12,7 @@ void game(float setTime, int inGameQuestions)
     const int screenHeight = 450;
 
     
-    bool questionAnswered = false;
+    bool questionAnswered = true;
     // Load texture
     Image image = LoadImage("../assets/c4.png");
     ImageResize(&image, 200, 250);
@@ -36,48 +36,54 @@ void game(float setTime, int inGameQuestions)
     int b = GetRandomValue(0, 15);
     int op = GetRandomValue(0, 3);
     string equation;
-
-    unsigned int solution;
+    string temp;
+    unsigned int solution = 0;
 
     // Loop until user exits
 
         // Generate a new equation if user guessed correctly
-    if (questionAnswered != true)
-    {
-        a = GetRandomValue(0, 15);
-        b = GetRandomValue(0, 15);
-        op = GetRandomValue(0, 4);
-
-        if (op == 0)
-        {
-            equation = to_string(a) + " & " + to_string(b) + " = ?";
-            solution = a & b;
-        }
-        else if (op == 1)
-        {
-            equation = to_string(a) + " | " + to_string(b) + " = ?";
-            solution = a | b;
-        }
-        else if (op == 2)
-        {
-            equation = to_string(a) + " ^ " + to_string(b) + " = ?";
-            solution = a ^ b;
-        }
-        else if (op == 3)
-        {
-            equation = to_string(a) + " << " + to_string(b) + " = ?";
-            solution = a << b;
-        }
-        else if (op == 4)
-        {
-            equation = to_string(a) + " >> " + to_string(b) + " = ?";
-            solution = a >> b;
-        }
-    }
+   
 
     while (!WindowShouldClose()) {
         DrawTexture(background, 0, 0, WHITE);
+        if (questionAnswered)
+        {
+            a = GetRandomValue(0, 15);
+            b = GetRandomValue(0, 15);
+            op = GetRandomValue(0, 4);
+            temp = to_string(solution);
+            if (name == temp)
+            {
+                correctAnswers++;
+            }
 
+            if (op == 0)
+            {
+                equation = to_string(a) + " & " + to_string(b) + " = ?";
+                solution = a & b;
+            }
+            else if (op == 1)
+            {
+                equation = to_string(a) + " | " + to_string(b) + " = ?";
+                solution = a | b;
+            }
+            else if (op == 2)
+            {
+                equation = to_string(a) + " ^ " + to_string(b) + " = ?";
+                solution = a ^ b;
+            }
+            else if (op == 3)
+            {
+                equation = to_string(a) + " << " + to_string(b) + " = ?";
+                solution = a << b;
+            }
+            else if (op == 4)
+            {
+                equation = to_string(a) + " >> " + to_string(b) + " = ?";
+                solution = a >> b;
+            }
+            questionAnswered = false;
+        }
         // Handle text input
         bool mouseOnText = CheckCollisionPointRec(GetMousePosition(), textBox);
         if (mouseOnText) SetMouseCursor(MOUSE_CURSOR_IBEAM);
@@ -97,6 +103,9 @@ void game(float setTime, int inGameQuestions)
             letterCount--;
             if (letterCount < 0) letterCount = 0;
             name[letterCount] = '\0';
+        }
+        if (IsKeyPressed(KEY_ENTER)) {
+            questionAnswered = true;
         }
 
         // Timer
@@ -125,12 +134,11 @@ void game(float setTime, int inGameQuestions)
         // Draw input text
         DrawText(name, (int)textBox.x + 5, (int)textBox.y + 8, 40, BLACK);
 
-       
+        temp = to_string(solution);
         // Draw timer
         DrawText(TextFormat("Time left: %.0f", timeLeft), 240, 30, 50, RAYWHITE);
-
-
         DrawText(equation.c_str(), 20, 130, 45, RED);
+       
         // Draw correct answers
         DrawText(TextFormat("Correct answers: %d", correctAnswers), screenWidth - 250, screenHeight - 25, 25, RAYWHITE);
 
