@@ -1,4 +1,4 @@
-<h1 align="center">Bit wise game</h1>
+<h1 align="center">Bitwise game</h1>
 
 <p align = "center">
   <img src="https://cdn.discordapp.com/attachments/1039545543623450644/1089487088631693332/enlarge_logo21321232.png"/>
