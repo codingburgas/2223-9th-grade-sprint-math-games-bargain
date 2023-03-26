@@ -169,7 +169,7 @@ void game(float setTime, int inGameQuestions)
         if (correctAnswers >= inGameQuestions)
         {
             CloseWindow();
-            score = correctAnswers * 10 - wrongAnswers * 10;
+            score = correctAnswers - wrongAnswers + setTime;
             menu(score);
         }
         EndDrawing();
