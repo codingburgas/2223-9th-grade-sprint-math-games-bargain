@@ -80,7 +80,7 @@ void game(float setTime)
         void generateEquation();
 
         // Draw timer
-        DrawText(TextFormat("Time left: %.0f", timeLeft), 337, 10, 20, RAYWHITE);
+        DrawText(TextFormat("Time left: %.0f", timeLeft), 240, 30, 50, RAYWHITE);
         
         // Draw correct answers
         DrawText(TextFormat("Correct answers: %d", correctAnswers), screenWidth - 250, screenHeight - 25, 25, RAYWHITE);
