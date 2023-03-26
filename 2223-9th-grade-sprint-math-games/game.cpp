@@ -11,7 +11,7 @@ void game(float setTime, int inGameQuestions)
     const int screenWidth = 800;
     const int screenHeight = 450;
 
-    
+
     bool questionAnswered = true;
     // Load texture
     Image image = LoadImage("../assets/c4.png");
@@ -24,7 +24,7 @@ void game(float setTime, int inGameQuestions)
     char name[MAX_INPUT_CHARS + 1] = "\0";
     int letterCount = 0;
     Rectangle textBox = { screenWidth / 2.0f - 385, 180, 225, 50 };
-    
+
     // Correct answers
     short correctAnswers = 0;
 
@@ -38,11 +38,11 @@ void game(float setTime, int inGameQuestions)
     string equation;
     string temp;
     unsigned int solution = 0;
-
+    short answerType = 0;
     // Loop until user exits
 
         // Generate a new equation if user guessed correctly
-   
+
 
     while (!WindowShouldClose()) {
         DrawTexture(background, 0, 0, WHITE);
@@ -51,11 +51,6 @@ void game(float setTime, int inGameQuestions)
             a = GetRandomValue(0, 5);
             b = GetRandomValue(0, 5);
             op = GetRandomValue(0, 4);
-            temp = to_string(solution);
-            if (name == temp)
-            {
-                correctAnswers++;
-            }
 
             if (op == 0)
             {
@@ -106,19 +101,31 @@ void game(float setTime, int inGameQuestions)
         }
         if (IsKeyPressed(KEY_ENTER)) {
             questionAnswered = true;
+            temp = to_string(solution);
+            if (name == temp)
+            {
+                correctAnswers++;
+                time += 5.0f;
+                answerType = 1;
+            }
+            else
+            {
+                time -= 5.0f;
+                answerType = 2;
+            }
         }
 
         // Timer
         float currentTime = (float)GetTime();
         timeLeft = setTime + 7.5f - (currentTime - time);
         if (timeLeft < 0.0f) {
-                timeLeft = 0.0f;
-                
-                CloseWindow();
-            }
+            timeLeft = 0.0f;
 
-        
-        
+            CloseWindow();
+        }
+
+
+
         // Draw
         BeginDrawing();
 
@@ -138,10 +145,26 @@ void game(float setTime, int inGameQuestions)
         // Draw timer
         DrawText(TextFormat("Time left: %.0f", timeLeft), 240, 30, 50, RAYWHITE);
         DrawText(equation.c_str(), 20, 130, 45, RED);
-       
+
+
+        if (answerType == 1)
+        {
+            DrawText("Correct answer! +5s", 20, 230, 15, GREEN);
+        }
+        if (answerType == 2)
+        {
+            DrawText("Wrong answer! -5s", 20, 230, 15, RED);
+        }
         // Draw correct answers
         DrawText(TextFormat("Correct answers: %d", correctAnswers), screenWidth - 250, screenHeight - 25, 25, RAYWHITE);
-
+        if (CheckCollisionPointRec(GetMousePosition(), { 0, screenHeight - 40, 200, 50 }))
+        {
+            DrawText(temp.c_str(), 20, screenHeight - 40, 40, WHITE);
+        }
+        else
+        {
+            DrawText("Hint", 20, screenHeight - 40, 20, RED);
+        }
         EndDrawing();
     }
     // Unload resources
