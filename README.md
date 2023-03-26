@@ -52,7 +52,7 @@ git clone https://github.com/codingburgas/2223-9th-grade-sprint-math-games-barga
  ## 🎬 Demo of the project 
   
   <p align="center">
-  <img src="https://cdn.discordapp.com/attachments/1039545543623450644/1089479120318124123/demoImageGame.png" >
+  <img src="https://cdn.discordapp.com/attachments/1039545543623450644/1089688247644454913/DemoGame_1.png" >
   </p>
 
 ## ⚙ Website Access
