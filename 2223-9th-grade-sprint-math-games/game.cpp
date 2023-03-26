@@ -27,6 +27,7 @@ void game(float setTime, int inGameQuestions)
 
     // Correct answers
     short correctAnswers = 0;
+    short wrongAnswers = 0;
 
     // Timer
     float time = 0.0f;
@@ -48,8 +49,8 @@ void game(float setTime, int inGameQuestions)
         DrawTexture(background, 0, 0, WHITE);
         if (questionAnswered)
         {
-            a = GetRandomValue(0, 10);
-            b = GetRandomValue(0, 10);
+            a = GetRandomValue(0, 7);
+            b = GetRandomValue(0, 7);
             op = GetRandomValue(0, 4);
 
             if (op == 0)
@@ -83,7 +84,7 @@ void game(float setTime, int inGameQuestions)
         bool mouseOnText = CheckCollisionPointRec(GetMousePosition(), textBox);
         if (mouseOnText) SetMouseCursor(MOUSE_CURSOR_IBEAM);
         else SetMouseCursor(MOUSE_CURSOR_DEFAULT);
-
+        
         int key = GetCharPressed();
         while (key > 0) {
             if ((key >= 32) && (key <= 125) && (letterCount < MAX_INPUT_CHARS)) {
@@ -106,16 +107,13 @@ void game(float setTime, int inGameQuestions)
             {
                 correctAnswers++;
                 time += 5.0f;
-                if (time > setTime)
-                {
-                    time = setTime;
-                }
                 answerType = 1;
             }
             else
             {
                 time -= 5.0f;
                 answerType = 2;
+                wrongAnswers++;
             }
         }
 
@@ -124,7 +122,6 @@ void game(float setTime, int inGameQuestions)
         timeLeft = setTime + 7.5f - (currentTime - time);
         if (timeLeft < 0.0f) {
             timeLeft = 0.0f;
-
             CloseWindow();
         }
 
@@ -172,7 +169,7 @@ void game(float setTime, int inGameQuestions)
         if (correctAnswers >= inGameQuestions)
         {
             CloseWindow();
-            score = correctAnswers * 10 + ((int)((setTime - time) * 10));
+            score = correctAnswers * 10 - wrongAnswers * 10;
             menu(score);
         }
         EndDrawing();
