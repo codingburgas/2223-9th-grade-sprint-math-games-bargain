@@ -17,7 +17,7 @@ void game(float setTime, int inGameQuestions)
     Image image = LoadImage("../assets/c4.png");
     ImageResize(&image, 200, 250);
     Texture2D texture = LoadTextureFromImage(image);
-    Texture2D background = LoadTexture("../assets/game-bg.png");
+    Texture2D background = LoadTexture("../assets/menu-bg.png");
     UnloadImage(image);
 
     // Set up text box
@@ -130,7 +130,7 @@ void game(float setTime, int inGameQuestions)
         DrawText(TextFormat("Time left: %.0f", timeLeft), 240, 30, 50, RAYWHITE);
 
 
-        DrawText(equation.c_str(), 100, 100, 20, RAYWHITE);
+        DrawText(equation.c_str(), 20, 130, 45, RED);
         // Draw correct answers
         DrawText(TextFormat("Correct answers: %d", correctAnswers), screenWidth - 250, screenHeight - 25, 25, RAYWHITE);
 
