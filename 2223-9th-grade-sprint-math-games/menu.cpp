@@ -7,6 +7,7 @@ void menu()
     const int screenWidth = 800;
     const int screenHeight = 450;
     bool inOptions = 0;
+    short inGameQuestions = 10;
     float timeInGame = 60.0f;
     InitWindow(screenWidth, screenHeight, "Menu");
 
@@ -83,9 +84,11 @@ void menu()
         ///////////////// IN OPTIONS
         else
         {
-            if (CheckCollisionPointRec(GetMousePosition(), { screenWidth / 2 - 100, 100, 200, 60 }))
+            DrawText("Custom settings", screenWidth / 2 - 185, 220, 50, RED);
+
+            if (CheckCollisionPointRec(GetMousePosition(), { screenWidth / 2 - 80, 280, 200, 40 }))
             {
-                DrawText(TextFormat("Time: %.0fs",timeInGame), screenWidth / 2 - 130, 100, 60, WHITE);
+                DrawText(TextFormat("Time: %.0fs",timeInGame), screenWidth / 2 - 80, 280, 40, WHITE);
                 if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
                 {
                     if (timeInGame < 300)
@@ -100,7 +103,26 @@ void menu()
             }
             else
             {
-                DrawText(TextFormat("Time: %.0fs", timeInGame), screenWidth / 2 - 130, 100, 60, RED);
+                DrawText(TextFormat("Time: %.0fs", timeInGame), screenWidth / 2 - 80, 280, 40, RED);
+            }
+            if (CheckCollisionPointRec(GetMousePosition(), { screenWidth / 2 - 115, 320, 200, 40 }))
+            {
+                DrawText(TextFormat("Questions: %d", inGameQuestions), screenWidth / 2 - 115, 320, 40, WHITE);
+                if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
+                {
+                    if (inGameQuestions < 20)
+                    {
+                        inGameQuestions++;
+                    }
+                    else if (inGameQuestions >= 20)
+                    {
+                        inGameQuestions = 5;
+                    }
+                }
+            }
+            else
+            {
+                DrawText(TextFormat("Questions: %d", inGameQuestions), screenWidth / 2 - 115, 320, 40, RED);
             }
 
 
