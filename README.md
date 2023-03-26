@@ -1,12 +1,16 @@
 <h1 align="center">Bit wise game</h1>
 
 <p align = "center">
-  <img src="https://cdn.discordapp.com/attachments/1039545543623450644/1089214666175156314/logoGame.png"/>
+  <img src="https://cdn.discordapp.com/attachments/1039545543623450644/1089487088631693332/enlarge_logo21321232.png"/>
 </p>
 
 <br>
 
 ## 📋 Description
+
+Our project present a short math game in which you have to defuse a bomb by solving bit wise equations. 
+
+Enjoy the game!
 
 ## 🚀 Languages 
   <p align="left"> 
@@ -51,7 +55,7 @@ git clone https://github.com/codingburgas/2223-9th-grade-sprint-math-games-barga
  ## 🎬 Demo of the project 
   
   <p align="center">
-  <img src="https://cdn.discordapp.com/attachments/1039545543623450644/1089200954966024322/demo_of_the_game_1.png" >
+  <img src="https://cdn.discordapp.com/attachments/1039545543623450644/1089479120318124123/demoImageGame.png" >
   </p>
 
 ## ⚙ Website Access
