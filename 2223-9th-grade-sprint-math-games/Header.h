@@ -2,11 +2,11 @@
 
 #include "raylib.h"
 
-void game();
+void game(float setTime);
 void menu();
 void timer();
 void picture();
-void countdown();
+void countdown(float setTime);
 int input(void);
 bool IsAnyKeyPressed();
 void randomEquation();

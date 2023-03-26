@@ -39,7 +39,7 @@ void menu()
                 if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
                 {
                     CloseWindow();
-                    countdown();
+                    countdown(timeInGame);
                 }
             }
             else

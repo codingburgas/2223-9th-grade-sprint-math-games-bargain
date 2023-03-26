@@ -3,7 +3,7 @@
 
 #define MAX_INPUT_CHARS 9
 
-void game()
+void game(float setTime)
 {
     const int screenWidth = 800;
     const int screenHeight = 450;
@@ -52,7 +52,7 @@ void game()
 
         // Timer
         float currentTime = (float)GetTime();
-        timeLeft = 66.0f - (currentTime - time);
+        timeLeft = setTime + 7.5f - (currentTime - time);
         if (timeLeft < 0.0f) {
                 timeLeft = 0.0f;
                 
