@@ -28,45 +28,45 @@ void randomEquation()
     unsigned int solution;
 
     // Loop until user exits
-    
+
         // Generate a new equation if user guessed correctly
-        if (questionAnswered != true)
+    if (questionAnswered != true)
+    {
+        a = GetRandomValue(0, 15);
+        b = GetRandomValue(0, 15);
+        op = GetRandomValue(0, 4);
+
+        if (op == 0)
         {
-            a = GetRandomValue(0, 15);
-            b = GetRandomValue(0, 15);
-            op = GetRandomValue(0, 4);
-
-            if (op == 0)
-            {
-                equation = to_string(a) + " & " + to_string(b) + " = ?";
-                solution = a & b;
-            }
-            else if (op == 1)
-            {
-                equation = to_string(a) + " | " + to_string(b) + " = ?";
-                solution = a | b;
-            }
-            else if (op == 2)
-            {
-                equation = to_string(a) + " ^ " + to_string(b) + " = ?";
-                solution = a ^ b;
-            }
-            else if (op == 3)
-            {
-                equation = to_string(a) + " << " + to_string(b) + " = ?";
-                solution = a << b;
-            }
-            else if (op == 4)
-            {
-                equation = to_string(a) + " >> " + to_string(b) + " = ?";
-                solution = a >> b;
-            }
+            equation = to_string(a) + " & " + to_string(b) + " = ?";
+            solution = a & b;
         }
+        else if (op == 1)
+        {
+            equation = to_string(a) + " | " + to_string(b) + " = ?";
+            solution = a | b;
+        }
+        else if (op == 2)
+        {
+            equation = to_string(a) + " ^ " + to_string(b) + " = ?";
+            solution = a ^ b;
+        }
+        else if (op == 3)
+        {
+            equation = to_string(a) + " << " + to_string(b) + " = ?";
+            solution = a << b;
+        }
+        else if (op == 4)
+        {
+            equation = to_string(a) + " >> " + to_string(b) + " = ?";
+            solution = a >> b;
+        }
+    }
 
-        
 
-    
 
-   
+
+
+
 
 }

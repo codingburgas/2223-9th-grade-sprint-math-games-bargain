@@ -4,7 +4,6 @@
 #include "raylib.h"
 #include "refactorFunction.h"
 
-
 //Check box test case
 TEST(CheckBoxTest, DrawCheckBoxTest) {
     // Initialize Raylib
@@ -70,7 +69,7 @@ TEST(TimerTest, TestWindowCloseWhenTimerAtZero) {
     EXPECT_TRUE(WindowShouldClose());
 }
 
-
+//Picture Test case
 TEST(PictureTest, TextureLoads) {
 
     // Load picture

@@ -2,33 +2,25 @@
 #include "Header.h"
 void picture()
 {
-    // Initialization
-    //--------------------------------------------------------------------------------------
+    
     const int screenWidth = 800;
     const int screenHeight = 450;
 
     InitWindow(screenWidth, screenHeight, "raylib [textures] example - image loading");
 
-    // NOTE: Textures MUST be loaded after Window initialization (OpenGL context is required)
+   
 
-    Image image = LoadImage("c4.png");     // Loaded in CPU memory (RAM)
+    Image image = LoadImage("c4.png");     
     ImageResize(&image, 350, 400);
-    Texture2D texture = LoadTextureFromImage(image);          // Image converted to texture, GPU memory (VRAM)
-    UnloadImage(image);   // Once image has been converted to texture and uploaded to VRAM, it can be unloaded from RAM
+    Texture2D texture = LoadTextureFromImage(image);          // Image converted to texture
+    UnloadImage(image);   
 
-    SetTargetFPS(60);     // Set our game to run at 60 frames-per-second
-    //---------------------------------------------------------------------------------------
+    SetTargetFPS(60);     
 
-    // Main game loop
-    while (!WindowShouldClose())    // Detect window close button or ESC key
+    
+    while (!WindowShouldClose())    
     {
-        // Update
-        //----------------------------------------------------------------------------------
-        // TODO: Update your variables here
-        //----------------------------------------------------------------------------------
-
-        // Draw
-        //----------------------------------------------------------------------------------
+       
         BeginDrawing();
 
         ClearBackground(BLACK);
@@ -38,15 +30,14 @@ void picture()
         
 
         EndDrawing();
-        //----------------------------------------------------------------------------------
+       
     }
 
-    // De-Initialization
-    //--------------------------------------------------------------------------------------
-    UnloadTexture(texture);       // Texture unloading
+    
+    UnloadTexture(texture);      
 
-    CloseWindow();                // Close window and OpenGL context
-    //--------------------------------------------------------------------------------------
+    CloseWindow();               
+    
 
     
 }

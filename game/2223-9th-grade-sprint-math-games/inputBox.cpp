@@ -1,129 +1,96 @@
 #include "raylib.h"
+#include <string>
 
 #define MAX_INPUT_CHARS     9
 
-//------------------------------------------------------------------------------------
-// Program main entry point
-//------------------------------------------------------------------------------------
+
+using namespace std;
+
 int input(void)
 {
-    // Initialization
-    //--------------------------------------------------------------------------------------
     const int screenWidth = 800;
     const int screenHeight = 450;
-
+    bool questionAnswered = true;
     
+   
 
-    char name[MAX_INPUT_CHARS + 1] = "\0";      // NOTE: One extra space required for null terminator char '\0'
+    // Set up text box
+    char name[MAX_INPUT_CHARS + 1] = "\0";
     int letterCount = 0;
-
     Rectangle textBox = { screenWidth / 2.0f - 385, 180, 225, 50 };
-    bool mouseOnText = false;
 
-    int framesCounter = 0;
+    // Correct answers
+    short correctAnswers = 0;
+    short wrongAnswers = 0;
 
-    SetTargetFPS(10);               // Set our game to run at 10 frames-per-second
-    //--------------------------------------------------------------------------------------
+    // Timer
+    float time = 0.0f;
+    
+    
+    
+    string equation;
+    string temp;
+    unsigned int solution = 0;
+    short answerType = 0;
 
+    SetTargetFPS(10);               
+    
     // Main game loop
-    while (!WindowShouldClose())    // Detect window close button or ESC key
+    while (!WindowShouldClose())   
     {
         // Update
-        //----------------------------------------------------------------------------------
-        if (CheckCollisionPointRec(GetMousePosition(), textBox)) mouseOnText = true;
-        else mouseOnText = false;
-
-        if (mouseOnText)
-        {
-            // Set the window's cursor to the I-Beam
-            SetMouseCursor(MOUSE_CURSOR_IBEAM);
-
-            // Get char pressed (unicode character) on the queue
-            int key = GetCharPressed();
-
-            // Check if more characters have been pressed on the same frame
-            while (key > 0)
-            {
-                // NOTE: Only allow keys in range [32..125]
-                if ((key >= 32) && (key <= 125) && (letterCount < MAX_INPUT_CHARS))
-                {
-                    name[letterCount] = (char)key;
-                    name[letterCount + 1] = '\0'; // Add null terminator at the end of the string.
-                    letterCount++;
-                }
-
-                key = GetCharPressed();  // Check next character in the queue
-            }
-
-            if (IsKeyPressed(KEY_BACKSPACE))
-            {
-                letterCount--;
-                if (letterCount < 0) letterCount = 0;
-                name[letterCount] = '\0';
-            }
-        }
+        bool mouseOnText = CheckCollisionPointRec(GetMousePosition(), textBox);
+        if (mouseOnText) SetMouseCursor(MOUSE_CURSOR_IBEAM);
         else SetMouseCursor(MOUSE_CURSOR_DEFAULT);
 
-        if (mouseOnText) framesCounter++;
-        else framesCounter = 0;
-        //----------------------------------------------------------------------------------
-
-        // Draw
-        //----------------------------------------------------------------------------------
-        BeginDrawing();
-
-        ClearBackground(RAYWHITE);
-
-        DrawRectangleRec(textBox, LIGHTGRAY);
-        if (mouseOnText)
-        {
-            DrawRectangleLines((int)textBox.x, (int)textBox.y, (int)textBox.width, (int)textBox.height, RED);
-        }
-        else
-        {
-            DrawRectangleLines((int)textBox.x, (int)textBox.y, (int)textBox.width, (int)textBox.height, DARKGRAY);
-        }
-
-        DrawText(name, (int)textBox.x + 5, (int)textBox.y + 8, 40, MAROON);
-
-        DrawText(TextFormat("INPUT CHARS: %i/%i", letterCount, MAX_INPUT_CHARS), 590, screenHeight - 25, 20, DARKGRAY);
-
-        if (mouseOnText)
-        {
-            if (letterCount < MAX_INPUT_CHARS)
-            {
-                // Draw blinking underscore char
-                if (((framesCounter / 20) % 2) == 0)
-                {
-                    DrawText("_", (int)textBox.x + 8 + MeasureText(name, 40), (int)textBox.y + 12, 40, MAROON);
-                }
+        int key = GetCharPressed();
+        while (key > 0) {
+            if ((key >= 32) && (key <= 125) && (letterCount < MAX_INPUT_CHARS)) {
+                name[letterCount] = (char)key;
+                name[letterCount + 1] = '\0';
+                letterCount++;
             }
-            
+            key = GetCharPressed();
         }
+
+        if (IsKeyPressed(KEY_BACKSPACE)) {
+            letterCount--;
+            if (letterCount < 0) letterCount = 0;
+            name[letterCount] = '\0';
+        }
+        if (IsKeyPressed(KEY_ENTER)) {
+            questionAnswered = true;
+            temp = to_string(solution);
+            if (name == temp)
+            {
+                correctAnswers++;
+                time += 5.0f;
+                answerType = 1;
+            }
+            else
+            {
+                time -= 5.0f;
+                answerType = 2;
+                wrongAnswers++;
+            }
+        }
+        
+       
+        // Draw text box
+        DrawRectangleRec(textBox, WHITE);
+        DrawRectangleLinesEx(textBox, 2, BLACK);
+
+        // Draw input text
+        DrawText(name, (int)textBox.x + 5, (int)textBox.y + 8, 40, BLACK);
 
         EndDrawing();
-        //----------------------------------------------------------------------------------
+        
     }
 
     // De-Initialization
-    //--------------------------------------------------------------------------------------
-    CloseWindow();        // Close window and OpenGL context
-    //--------------------------------------------------------------------------------------
+    
+    CloseWindow();        
+    
 
     return 0;
-}
-
-// Check if any key is pressed
-// NOTE: We limit keys check to keys between 32 (KEY_SPACE) and 126
-bool IsAnyKeyPressed()
-{
-    bool keyPressed = false;
-    int key = GetKeyPressed();
-
-    if ((key >= 32) && (key <= 126))
-    {
-        keyPressed = true;
-    }
-
-    return keyPressed;
 }

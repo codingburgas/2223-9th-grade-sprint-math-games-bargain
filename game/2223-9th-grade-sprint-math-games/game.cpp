@@ -33,8 +33,8 @@ void game(float setTime, int inGameQuestions)
     float time = 0.0f;
     float timeLeft = 0.0f;
     int score = 0;
-    int a = GetRandomValue(0, 15);
-    int b = GetRandomValue(0, 15);
+    int a = GetRandomValue(0, 7);
+    int b = GetRandomValue(0, 7);
     int op = GetRandomValue(0, 3);
     string equation;
     string temp;

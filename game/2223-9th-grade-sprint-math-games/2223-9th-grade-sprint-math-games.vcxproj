@@ -140,12 +140,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="countdown.cpp" />
-    <ClCompile Include="generateEquation.cpp" />
     <ClCompile Include="MAIN.cpp" />
     <ClCompile Include="picture.cpp" />
     <ClCompile Include="inputBox.cpp" />
     <ClCompile Include="menu.cpp" />
     <ClCompile Include="GAME.cpp" />
+    <ClCompile Include="randomEquation.cpp" />
     <ClCompile Include="timer.cpp" />
   </ItemGroup>
   <ItemGroup>

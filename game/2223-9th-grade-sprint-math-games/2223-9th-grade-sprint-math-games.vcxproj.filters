@@ -36,7 +36,7 @@
     <ClCompile Include="countdown.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="generateEquation.cpp">
+    <ClCompile Include="randomEquation.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

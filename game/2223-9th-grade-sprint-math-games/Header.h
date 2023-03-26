@@ -8,5 +8,4 @@ void timer();
 void picture();
 void countdown(float setTime, int inGameQuestions);
 int input(void);
-bool IsAnyKeyPressed();
 void randomEquation();

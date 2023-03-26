@@ -31,7 +31,7 @@ void menu(int highScore)
 
 
 
-        ///////////////// IN MAIN MENU
+        // IN MAIN MENU
         if (!(inOptions))
         {
             DrawTexture(texture, screenWidth / 2 - texture.width / 2, screenHeight / 2 - texture.height / 2 - 50, WHITE);
@@ -94,7 +94,7 @@ void menu(int highScore)
 
 
 
-        ///////////////// IN OPTIONS
+        //IN OPTIONS
         else
         {
             DrawText("Overall settings", screenWidth / 2 - 190, 80, 50, BLUE);
