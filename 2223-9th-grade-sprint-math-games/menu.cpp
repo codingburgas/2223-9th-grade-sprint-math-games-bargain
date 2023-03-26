@@ -8,6 +8,7 @@ void menu()
     const int screenHeight = 450;
     bool inOptions = 0;
     short inGameQuestions = 10;
+    short difficulty = 1;
     float timeInGame = 60.0f;
     InitWindow(screenWidth, screenHeight, "Menu");
 
@@ -84,13 +85,64 @@ void menu()
         ///////////////// IN OPTIONS
         else
         {
-            DrawText("Custom settings", screenWidth / 2 - 185, 220, 50, RED);
+            DrawText("Overall settings", screenWidth / 2 - 190, 80, 50, BLUE);
+
+            if (CheckCollisionPointRec(GetMousePosition(), { screenWidth / 2 - 140, 150, 200, 50 }))
+            {
+                if (difficulty == 1)
+                    DrawText("Difficulty: Easy", screenWidth / 2 - 140, 150, 40, WHITE);
+                else if (difficulty == 2)
+                    DrawText("Difficulty: Normal", screenWidth / 2 - 140, 150, 40, WHITE);
+                else if (difficulty == 3)
+                    DrawText("Difficulty: Hard", screenWidth / 2 - 140, 150, 40, WHITE);
+                else if (difficulty == 4)
+                    DrawText("Difficulty: Custom", screenWidth / 2 - 140, 150, 40, WHITE);
+                if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
+                {
+                    difficulty++;
+                    if (difficulty == 2)
+                    {
+                        inGameQuestions = 15;
+                        timeInGame = 60.0f;
+                    }
+                    if (difficulty == 3)
+                    {
+                        inGameQuestions = 20;
+                        timeInGame = 30.0f;
+                    }
+                    if (difficulty > 3)
+                    {
+                        difficulty = 1;
+                        inGameQuestions = 10;
+                        timeInGame = 60.0f;
+                    }
+                    if (difficulty == 1)
+                    {
+                        inGameQuestions = 10;
+                        timeInGame = 60.0f;
+                    }
+                }
+            }
+            else
+            {
+                if(difficulty == 1)
+                    DrawText("Difficulty: Easy", screenWidth / 2 - 140, 150, 40, RED);
+                else if(difficulty == 2)
+                    DrawText("Difficulty: Normal", screenWidth / 2 - 140, 150, 40, RED);
+                else if (difficulty == 3)
+                    DrawText("Difficulty: Hard", screenWidth / 2 - 140, 150, 40, RED);
+                else if (difficulty == 4)
+                    DrawText("Difficulty: Custom", screenWidth / 2 - 140, 150, 40, RED);
+            }
+
+            DrawText("Custom settings", screenWidth / 2 - 185, 220, 50, BLUE);
 
             if (CheckCollisionPointRec(GetMousePosition(), { screenWidth / 2 - 80, 280, 200, 40 }))
             {
                 DrawText(TextFormat("Time: %.0fs",timeInGame), screenWidth / 2 - 80, 280, 40, WHITE);
                 if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
                 {
+                    difficulty = 4;
                     if (timeInGame < 300)
                     {
                         timeInGame += 10;
@@ -110,6 +162,7 @@ void menu()
                 DrawText(TextFormat("Questions: %d", inGameQuestions), screenWidth / 2 - 115, 320, 40, WHITE);
                 if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
                 {
+                    difficulty = 4;
                     if (inGameQuestions < 20)
                     {
                         inGameQuestions++;
