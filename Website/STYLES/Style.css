@@ -44,8 +44,8 @@ body{
     margin-left: 4%;
     border-style: solid;
     color: #fff8f8;
-    border-color: #c92828ee;
-    background-color: #c92828ee;
+    border-color: #c92829ee;
+    background-color: #c92829ee;
     border-radius: 40px;
     font-size: 32px;
     padding: 9px 48px 9px;
@@ -56,6 +56,6 @@ body{
     margin-top: -90%;
     margin-left: 50%;
     margin-bottom: 7%;
-    width: 700px;
+    width: 730px;
     height: 600px;
 }
