@@ -36,7 +36,7 @@ Enjoy the game!
   </p> 
   
 ## 💼 Documents
-  - [Documentation](https://codingburgas-my.sharepoint.com/:w:/g/personal/atapostolov21_codingburgas_bg/EbfOB2WstuZNuS_levWJAzwBYuPP_NvrpLFZmjgi9inBqA?e=XoI8sk)
+  - [Documentation](https://codingburgas-my.sharepoint.com/:w:/g/personal/atapostolov21_codingburgas_bg/ERZYUtiHUlpIg9QRqn0DmV8BXSQoe3nr0GDzsKkNlbxWVw?e=KaiBkD)
   - [Presentation](https://codingburgas-my.sharepoint.com/:p:/g/personal/atapostolov21_codingburgas_bg/EaJnzJ4-TbFJgFhVLR_V3cQBSzkHNRAvgWo9hpROABxJxA?e=s0zgMx)
   - [QA - Test Plan](https://codingburgas-my.sharepoint.com/:x:/g/personal/atapostolov21_codingburgas_bg/EYqYHienkWBGhgDJydiSK7kB5qmev6gz6UmrYxN3QEp7Nw?e=56ke8q)
 
