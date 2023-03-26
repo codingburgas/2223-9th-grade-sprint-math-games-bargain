@@ -36,12 +36,9 @@ Enjoy the game!
   </p> 
   
 ## 💼 Documents
-  - [Doxygen]()
-  - [Documentation]()
-  - [Design documentation]()
+  - [Documentation](https://codingburgas-my.sharepoint.com/:w:/g/personal/atapostolov21_codingburgas_bg/EbfOB2WstuZNuS_levWJAzwBYuPP_NvrpLFZmjgi9inBqA?e=XoI8sk)
   - [Presentation](https://codingburgas-my.sharepoint.com/:p:/g/personal/atapostolov21_codingburgas_bg/EaJnzJ4-TbFJgFhVLR_V3cQBSzkHNRAvgWo9hpROABxJxA?e=s0zgMx)
-  - [QA Google testing]()
-  - [QA - Test Plan]()
+  - [QA - Test Plan](https://codingburgas-my.sharepoint.com/:x:/g/personal/atapostolov21_codingburgas_bg/EYqYHienkWBGhgDJydiSK7kB5qmev6gz6UmrYxN3QEp7Nw?e=56ke8q)
 
 ## 🔧 Installation
 
@@ -62,7 +59,7 @@ git clone https://github.com/codingburgas/2223-9th-grade-sprint-math-games-barga
 
 *You can access our website by pasting this link into your browser.*
 ```
-https:
+https: https://sysolakov20.github.io/Team-Bargain-Website-Hos/
 ```
 
 ## 🖥 Team Members
