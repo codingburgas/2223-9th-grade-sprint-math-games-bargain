@@ -1,6 +1,4 @@
 #pragma once
-
-
 #include <string>
 #include <iostream>
 #include <Header.h>
@@ -64,13 +62,5 @@ float timerF(float time = 0.0f, float timeLeft = 0.0f)
     }
     return 0;
 }
-
-
-
-
-
-
-
-
 
 

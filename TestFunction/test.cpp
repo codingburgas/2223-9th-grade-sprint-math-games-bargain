@@ -2,7 +2,7 @@
 #include "gtest/gtest.h"
 #include <Header.h>
 #include "raylib.h"
-#include "RefactoredFunctions.h"
+#include "refactorFunction.h"
 
 
 //Check box test case
