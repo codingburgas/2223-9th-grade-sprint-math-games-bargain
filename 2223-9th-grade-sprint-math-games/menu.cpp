@@ -1,7 +1,7 @@
 #include "raylib.h"
 #include "Header.h"
 
-void menu()
+void menu(int highScore)
 {
 
     const int screenWidth = 800;
@@ -62,7 +62,19 @@ void menu()
             {
                 DrawText("Options", screenWidth / 2 - MeasureText("Options", 20) / 2, 360, 20, RED);
             }
-
+            // High score
+            if (CheckCollisionPointRec(GetMousePosition(), { 0, 10, 150, 20 }))
+            {
+                DrawText("CLICK TO RESET", 10, 10, 20, WHITE);
+                if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
+                {
+                    highScore = 0;
+                }
+            }
+            else
+            {
+                DrawText(TextFormat("High score: %d", highScore), 10,  10, 20, RED);
+            }
             // Exit Button
             if (CheckCollisionPointRec(GetMousePosition(), { 0, screenHeight - 40, 200, 50 }))
             {
@@ -177,7 +189,7 @@ void menu()
             {
                 DrawText(TextFormat("Questions: %d", inGameQuestions), screenWidth / 2 - 115, 320, 40, RED);
             }
-
+            
 
             // Back Button
             if (CheckCollisionPointRec(GetMousePosition(), { 0, screenHeight - 40, 200, 50 }))
@@ -196,6 +208,7 @@ void menu()
         
 
         DrawText("BARGAIN TEAM @ 2023", screenWidth - 125, screenHeight - 15, 10, WHITE);
+
         EndDrawing();
     }
     

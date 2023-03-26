@@ -31,7 +31,7 @@ void game(float setTime, int inGameQuestions)
     // Timer
     float time = 0.0f;
     float timeLeft = 0.0f;
-
+    int score = 0;
     int a = GetRandomValue(0, 15);
     int b = GetRandomValue(0, 15);
     int op = GetRandomValue(0, 3);
@@ -48,8 +48,8 @@ void game(float setTime, int inGameQuestions)
         DrawTexture(background, 0, 0, WHITE);
         if (questionAnswered)
         {
-            a = GetRandomValue(0, 5);
-            b = GetRandomValue(0, 5);
+            a = GetRandomValue(0, 10);
+            b = GetRandomValue(0, 10);
             op = GetRandomValue(0, 4);
 
             if (op == 0)
@@ -106,6 +106,10 @@ void game(float setTime, int inGameQuestions)
             {
                 correctAnswers++;
                 time += 5.0f;
+                if (time > setTime)
+                {
+                    time = setTime;
+                }
                 answerType = 1;
             }
             else
@@ -164,6 +168,12 @@ void game(float setTime, int inGameQuestions)
         else
         {
             DrawText("Hint", 20, screenHeight - 40, 20, RED);
+        }
+        if (correctAnswers >= inGameQuestions)
+        {
+            CloseWindow();
+            score = correctAnswers * 10 + ((int)((setTime - time) * 10));
+            menu(score);
         }
         EndDrawing();
     }
