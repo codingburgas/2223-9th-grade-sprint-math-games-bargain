@@ -3,7 +3,7 @@
 
 #define MAX_INPUT_CHARS 9
 
-void game(float setTime)
+void game(float setTime, int inGameQuestions)
 {
     const int screenWidth = 800;
     const int screenHeight = 450;

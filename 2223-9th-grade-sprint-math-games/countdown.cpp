@@ -1,7 +1,7 @@
 #include "raylib.h"
 #include "Header.h"
 
-void countdown(float setTime)
+void countdown(float setTime, int inGameQuestions)
 {
 
     const int screenWidth = 800;
@@ -27,7 +27,7 @@ void countdown(float setTime)
             }
             if (timeLeft < 0.0f) {
                 timeLeft = 0.0f;
-                game(setTime);
+                game(setTime, inGameQuestions);
             }
         BeginDrawing();
         ClearBackground(BLACK);
