@@ -23,14 +23,14 @@ void randomEquation()
     int a = GetRandomValue(0, 15);
     int b = GetRandomValue(0, 15);
     int op = GetRandomValue(0, 3);
+    bool questionAnswered = false;
     string equation;
     unsigned int solution;
 
     // Loop until user exits
-    while (!WindowShouldClose())
-    {
+    
         // Generate a new equation if user guessed correctly
-        if (IsKeyPressed(KEY_ENTER))
+        if (questionAnswered != true)
         {
             a = GetRandomValue(0, 15);
             b = GetRandomValue(0, 15);
@@ -63,12 +63,9 @@ void randomEquation()
             }
         }
 
-        BeginDrawing();
-        ClearBackground(BLACK);
-        DrawText(equation.c_str(), 100, 100, 32, BLACK);
-        EndDrawing();
+        
 
-    }
+    
 
    
 
