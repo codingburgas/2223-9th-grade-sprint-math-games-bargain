@@ -21,6 +21,9 @@ void game(float setTime)
     char name[MAX_INPUT_CHARS + 1] = "\0";
     int letterCount = 0;
     Rectangle textBox = { screenWidth / 2.0f - 385, 180, 225, 50 };
+    
+    // Correct answers
+    short correctAnswers = 0;
 
     // Timer
     float time = 0.0f;
@@ -79,6 +82,8 @@ void game(float setTime)
         // Draw timer
         DrawText(TextFormat("Time left: %.0f", timeLeft), 337, 10, 20, RAYWHITE);
         
+        // Draw correct answers
+        DrawText(TextFormat("Correct answers: %d", correctAnswers), screenWidth - 250, screenHeight - 25, 25, RAYWHITE);
 
         EndDrawing();
     }
