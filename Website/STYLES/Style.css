@@ -36,7 +36,8 @@ body{
     width: 600px;
     margin-top: 4%;
     margin-left: 4%;
-    font-family: 'Inter', sans-serif;
+    color: rgba(234, 224, 224, 0.979);
+    font-family: 'Poppins', 'Segoe UI', Arial, Helvetica, sans-serif;
 }
 .download-button{
     border: 4px;
